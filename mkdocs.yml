@@ -1,0 +1,19 @@
+site_name: My Memo
+
+theme:
+  name: material
+  features:
+    - content.code.copy
+    - content.tabs.link
+  icon:
+    admonition:
+      note: octicons/tag-16
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
