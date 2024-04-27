@@ -956,16 +956,24 @@ aws cognito-idp sign-up --client-id 1234567890abcdef0 --password Password1! --us
 その後、`hoge@example.com`に届いた確認コードを使って、ユーザを確認します。
 
 ```powershell
+aws cognito-idp confirm-sign-up --client-id 1234567890abcdef0 --confirmation-code 123456 --username hoge
 ```
 
 無事サインアップが完了しました。
+
+余談ですが、email を利用した Username Attributes の場合、確認コードを送信する際には`--username`に email を使っていました。
+Alias Attributes の場合、`--username`に email を使うと、確認コードが正しくても`ExpiredCodeException`が発生しました。
+`--username`に割り当てる値の仕様が違うことに注意してください。
+
 続いて、fuga さんを同じメールアドレスでサインアップします。
 
 ```powershell
-aws cognito-idp sign-up --client-id 1234567890abcdef0 --password Password1! --user-attributes Name="email",Value="hoge@example.com" --username hoge
+aws cognito-idp sign-up --client-id 1234567890abcdef0 --password Password1! --user-attributes Name="email",Value="hoge@example.com" --username fuga
 ```
 
-サインアップはできませんでしたが、既にこのメールアドレスが登録されていることがエラーメッセージから確認できます。
+すると、サインアップが成功したときと同じレスポンスが返却されました。
+このメールアドレスが登録されているかどうかは、サインアップ時には分からなくなっています。
+また、メールアドレス宛に確認コードが送信されることもありません。
 
 #### Alias Attributes へのサインイン
 
