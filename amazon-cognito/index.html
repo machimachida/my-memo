@@ -1,0 +1,1573 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.20">
+    
+    
+      
+        <title>Amazon Cognito - My Memo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
+      
+      
+  
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#amazon-cognito" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My Memo" class="md-header__button md-logo" aria-label="My Memo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Memo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Amazon Cognito
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My Memo" class="md-nav__button md-logo" aria-label="My Memo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    My Memo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Top Page
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Amazon Cognito
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Amazon Cognito
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#normal-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      まずは普通に使う
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      サインアップ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sign-up-with-existing-email" class="md-nav__link">
+    <span class="md-ellipsis">
+      既に存在するメールアドレスでのサインアップ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      世間一般での挙動
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usernameexistsexception" class="md-nav__link">
+    <span class="md-ellipsis">
+      UsernameExistsException の回避方法
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#username-attributes-alias-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Username Attributes と Alias Attributes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Username Attributes と Alias Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#username-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Username Attributes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Username Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#username-attributes-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Username Attributes の設定
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#username-attributes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Username Attributes のときのサインアップ重複エラー
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#username-attributes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Username Attributes へのサインイン
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#username-attributes_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Username Attributes でのユーザ情報
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alias-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alias Attributes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alias Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alias-attributes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alias Attributes の設定
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alias-attributes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alias Attributes のときのサインアップ重複エラー
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alias-attributes_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alias Attributes へのサインイン
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alias-attributes_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alias Attributes でのユーザ情報
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#normal-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      まずは普通に使う
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      サインアップ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sign-up-with-existing-email" class="md-nav__link">
+    <span class="md-ellipsis">
+      既に存在するメールアドレスでのサインアップ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      世間一般での挙動
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usernameexistsexception" class="md-nav__link">
+    <span class="md-ellipsis">
+      UsernameExistsException の回避方法
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#username-attributes-alias-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Username Attributes と Alias Attributes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Username Attributes と Alias Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#username-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Username Attributes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Username Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#username-attributes-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Username Attributes の設定
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#username-attributes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Username Attributes のときのサインアップ重複エラー
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#username-attributes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Username Attributes へのサインイン
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#username-attributes_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Username Attributes でのユーザ情報
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alias-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alias Attributes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alias Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alias-attributes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alias Attributes の設定
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alias-attributes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alias Attributes のときのサインアップ重複エラー
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alias-attributes_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alias Attributes へのサインイン
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alias-attributes_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alias Attributes でのユーザ情報
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="amazon-cognito">Amazon Cognito</h1>
+<p>Amazon Cognito と格闘したメモです。
+SPA での利用を考えており、Vue から直接認証を行うつもりです。
+Cognito を使うことで、ユーザの認証用のエンドポイントやデータベースの実装の簡略化を狙います。</p>
+<h2 id="normal-use">まずは普通に使う</h2>
+<p>基本的にステップに従う形で設定しましたが、</p>
+<p>email のみでログインするように設定し、(Step 1)</p>
+<p><img alt="Sign-In Experience" src="../images/amazon-cognito/configure-sign-in-experience.png" /></p>
+<p>app client はクライアントシークレットを持たない設定で作成しました。(Step 5)</p>
+<p><img alt="App Client" src="../images/amazon-cognito/initial-app-client.png" /></p>
+<p>Vue からは<a href="https://www.npmjs.com/package/amazon-cognito-identity-js"><code>amazon-cognito-identity-js</code></a> を使ってログインを行いました。
+ユースケースとして書かれているサンプルコードを参考にすれば実装できるので、実装の詳細は割愛します。</p>
+<p>これで、Vue などのクライアントから Sign Up, Sign In, Sign Out など、基本的なことはできるようになります。</p>
+<h2 id="_1">サインアップ</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ここから Cognito の挙動を確認していきますが、クライアントの実装が面倒なので AWS CLI を使って確認操作を行います。
+Vue を使っても同じ挙動・エラーが返されます。</p>
+</div>
+<p>Cognito のユーザの Sign Up のフローは以下のようになっています。
+メールアドレスやパスワードを登録すると、メールが送信され、そのメールに記載されたコードを入力することでユーザが登録されます。</p>
+<p><img alt="Sign Up Flow" src="https://docs.aws.amazon.com/ja_jp/cognito/latest/developerguide/images/amazon-cognito-sign-in-confirm-user.png" /></p>
+<p>ユーザ<code>hoge</code>さんが自分のメールアドレスを使って Sign Up します。（<code>Sign-up</code>の手続き）</p>
+<div class="highlight"><pre><span></span><code><span class="n">aws</span> <span class="n">cognito-idp</span> <span class="n">sign-up</span> <span class="p">-</span><span class="n">-client-id</span> <span class="n">1234567890abcdef0</span> <span class="p">-</span><span class="n">-password</span> <span class="n">Password1</span><span class="p">!</span> <span class="p">-</span><span class="n">-user-attributes</span> <span class="n">Name</span><span class="p">=</span><span class="s2">&quot;email&quot;</span><span class="p">,</span><span class="n">Value</span><span class="p">=</span><span class="s2">&quot;hoge@example.com&quot;</span> <span class="p">-</span><span class="n">-username</span> <span class="n">hoge</span><span class="nv">@example</span><span class="p">.</span><span class="n">com</span>
+</code></pre></div>
+<p>登録が完了した時点では、ユーザは<code>Registered(Unconfirmed)</code>状態です。
+確認コードを入力します。(<code>Confirm via email/phone</code>の手続き)</p>
+<div class="highlight"><pre><span></span><code><span class="n">aws</span> <span class="n">cognito-idp</span> <span class="nb">confirm-sign</span><span class="n">-up</span> <span class="p">-</span><span class="n">-client-id</span> <span class="n">1234567890abcdef0</span> <span class="p">-</span><span class="n">-confirmation-code</span> <span class="n">123456</span> <span class="p">-</span><span class="n">-username</span> <span class="n">hoge</span><span class="nv">@example</span><span class="p">.</span><span class="n">com</span>
+</code></pre></div>
+<p>これでユーザ<code>hoge</code>さんが登録されました。<code>Confirmed</code>状態です。</p>
+<h2 id="sign-up-with-existing-email">既に存在するメールアドレスでのサインアップ</h2>
+<p>登録されているメールアドレスでサインアップを行った場合の挙動を確かめてみましょう。
+<code>Sign-up</code>の手続きを行います。</p>
+<div class="highlight"><pre><span></span><code><span class="n">aws</span> <span class="n">cognito-idp</span> <span class="n">sign-up</span> <span class="p">-</span><span class="n">-client-id</span> <span class="n">1234567890abcdef0</span> <span class="p">-</span><span class="n">-password</span> <span class="n">Password1</span><span class="p">!</span> <span class="p">-</span><span class="n">-user-attributes</span> <span class="n">Name</span><span class="p">=</span><span class="s2">&quot;email&quot;</span><span class="p">,</span><span class="n">Value</span><span class="p">=</span><span class="s2">&quot;hoge@example.com&quot;</span> <span class="p">-</span><span class="n">-username</span> <span class="n">hoge</span><span class="nv">@example</span><span class="p">.</span><span class="n">com</span>
+</code></pre></div>
+<p>すると、以下のエラーが発生します。</p>
+<div class="highlight"><pre><span></span><code>An error occurred (UsernameExistsException) when calling the SignUp operation: An account with the given email already exists.
+</code></pre></div>
+<p>サインアップはできませんでしたが、既にこのメールアドレスが登録されていることがエラーメッセージから確認できます。</p>
+<p>これが悩みの種です。
+サインアップの API でユーザの存在が確認できてしまってよいのでしょうか？
+新卒で受けた研修では、ユーザの存在がわかるエラーを返してはいけないと教わりました。</p>
+<h2 id="_2">世間一般での挙動</h2>
+<p>GitHub で確認したところ、サインアップ画面でメールアドレスを入力すると、そのメールアドレスが存在する旨が表示されました。</p>
+<p><img alt="GitHub Sign Up" src="../images/amazon-cognito/github-sign-up.png" /></p>
+<p>ChatGPT でも同様です。ユーザが MFA をしっかり設定できている前提なら、セキュリティ面はそんなに気にしなくてもいいのか...？</p>
+<p><img alt="ChatGPT Sign Up" src="../images/amazon-cognito/chatgpt-sign-up.png" /></p>
+<p>徳丸浩さんが書いた<a href="https://www.amazon.co.jp/%E4%BD%93%E7%B3%BB%E7%9A%84%E3%81%AB%E5%AD%A6%E3%81%B6-%E5%AE%89%E5%85%A8%E3%81%AAWeb%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9-%E7%AC%AC2%E7%89%88-%E8%84%86%E5%BC%B1%E6%80%A7%E3%81%8C%E7%94%9F%E3%81%BE%E3%82%8C%E3%82%8B%E5%8E%9F%E7%90%86%E3%81%A8%E5%AF%BE%E7%AD%96%E3%81%AE%E5%AE%9F%E8%B7%B5-%E5%BE%B3%E4%B8%B8/dp/4797393165">安全なWebアプリケーションの作り方</a>では、Google のサインイン画面について取り上げています。
+Googleのサインインは、メールアドレスの確認の後、パスワードの確認を行うようになっており、メールアドレスが存在しない場合エラーを返します。</p>
+<p><img alt="Google Sign In" src="../images/amazon-cognito/google-sign-in.png" /></p>
+<p>それについて、徳丸さんは以下のように書いています。</p>
+<blockquote>
+<p>ユーザ登録されていないIDの場合は以下のようにエラーになります。すなわち、パスワードを正当しなくても、特定のIDがGoogleにユーザ登録されているか否かは分かるわけです。「従来のセキュリティの常識」には反するものですが、ログイン操作自体はやりやすくなります。（中略）米国の大手サイトを中心に最近この種のログイン画面が増えています。</p>
+</blockquote>
+<p>ユーザビリティの向上のために、メールアドレスの存在を明らかにしているわけですね。
+最近は MFA でユーザアカウントのセキュリティを確保することが重視されています。
+きちんと MFA を利用しているならメールアドレスのの存在有無がわかっても問題ないのかもしれません。</p>
+<p>徳丸さんの本ではサインインについて書かれていましたが、サインアップについても同様のことが言えると思います。</p>
+<p>と思いましたが、GitHub と ChatGPT のログイン画面は「従来のセキュリティの常識」に従って、メールアドレスとパスワードのどちらが間違っているかはわからないエラーが返されていました。
+サインイン画面ではユーザの存在がわからないエラーを返しているのに、サインアップ画面では存在がわかるエラーを返しているのは何故なのでしょうね。
+ユーザ存在エラーにこだわらない形でセキュリティを担保する仕組みを整えるのが一般的になっているのかもしれません。</p>
+<p><img alt="GitHub Sign In" src="../images/amazon-cognito/github-sign-in.png" />
+<img alt="ChatGPT Sign In" src="../images/amazon-cognito/chatgpt-sign-in.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ちなみにAmazon Cognitoのデフォルト設定では、サインイン時についてはメールアドレスとパスワードのどちらを間違えていたかはわからないエラーが返されます。
+サインインのエラーは「従来のセキュリティの常識」に従っているようです。
+この挙動は App Client の設定 "Prevent user existence errors"から変更できます。
+チェックを外すと、メールアドレスが存在しない旨がエラーに表示されるようになります。
+この設定はサインアップとは関係ありません。
+<a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-managing-errors.html">（参考）</a>
+<img alt="Prevent User Existence Errors" src="../images/amazon-cognito/prevent-user-existence-errors.png" />   </p>
+</div>
+<h2 id="usernameexistsexception">UsernameExistsException の回避方法</h2>
+<p>それでは、UsernameExistsException を回避する方法はないのでしょうか。</p>
+<p>二つの方法で回避することができます。</p>
+<ol>
+<li>Cognito へ認証用のリクエストを送るバックエンドを実装し、Vue からはそのバックエンドを経由して Cognito にリクエストを送る</li>
+<li>Cognito のサインイン属性を Alias Attribute にする</li>
+</ol>
+<p>1 はせっかく Cognito で認証周りの実装を楽にしようとしているのに、本末転倒という感じがします。
+何かしら認証周りでカスタマイズが必要な場合はこの方法が有意義だとは思いますが、今回は避けたいです。</p>
+<p>2 は Alias Attribute って何？という感じですよね。
+AWS の Web UI では Alias Attribute を設定するための項目はありません。
+いえ、あるにはあるのですが、Web UI では <strong>Alias Attribute</strong> という名前で表現されていないのです。</p>
+<h2 id="username-attributes-alias-attributes">Username Attributes と Alias Attributes</h2>
+<p>ここでは、Amazon Cognito の二つのサインイン属性について説明します。
+公式ドキュメントでは、<a href="https://docs.aws.amazon.com/ja_jp/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">ログイン属性のカスタマイズ - ユーザプール属性</a>に詳しく書かれています。
+しかし、実際に Cognito を構築したり、設定の内容を確認しないと理解が難しいと思います。
+ここでは、Cognito の挙動を確認しながら Username Attributes と Alias Attributes について説明します。</p>
+<h3 id="username-attributes">Username Attributes</h3>
+<h4 id="username-attributes-settings">Username Attributes の設定</h4>
+<p><a href="#normal-use">先ほど</a> Amazon Cognito のユーザプールを作成した際、 email のみでログインするように設定しました。</p>
+<p><img alt="Sign-In Experience" src="../images/amazon-cognito/configure-sign-in-experience.png" /></p>
+<p>実はこの設定によって、ログイン属性は Username Attributes に決まりました。
+このチェックボックスへのチェックの方法で Username Attributes か Alias Attributes のどちらかが設定されます。</p>
+<p>Username Attributes が設定されていることを、AWS CLI で確認します。
+ユーザプール一覧を確認し、詳細を知りたい User Pool の ID を取得します。</p>
+<div class="highlight"><span class="filename">ユーザプール一覧確認コマンド</span><pre><span></span><code><span class="n">aws</span> <span class="n">cognito-idp</span> <span class="n">list-user-pools</span> <span class="p">-</span><span class="n">-max-results</span> <span class="n">20</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">結果</span><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UserPools&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="hll"><span class="w">            </span><span class="nt">&quot;Id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ap-northeast-1_XXXXXXXXX&quot;</span><span class="p">,</span>
+</span><span class="w">            </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HogeUserPool&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;LambdaConfig&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">            </span><span class="nt">&quot;LastModifiedDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-03-25T21:22:34.748000+09:00&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;CreationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-03-25T21:22:34.748000+09:00&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>ID を使って詳細を取得します。</p>
+<div class="highlight"><span class="filename">ユーザプール詳細確認コマンド</span><pre><span></span><code><span class="n">aws</span> <span class="n">cognito-idp</span> <span class="n">describe-user-pool</span> <span class="p">-</span><span class="n">-user-pool-id</span> <span class="n">ap-northeast</span><span class="p">-</span><span class="n">1_XXXXXXXXX</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">結果（全文）</span><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;UserPool&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ap-northeast-1_XXXXXXXXX&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HogeUserPool&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Policies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;PasswordPolicy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;MinimumLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;RequireUppercase&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;RequireLowercase&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;RequireNumbers&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;RequireSymbols&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;TemporaryPasswordValidityDays&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;DeletionProtection&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;LambdaConfig&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;LastModifiedDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-03-25T21:22:34.748000+09:00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;CreationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-03-25T21:22:34.748000+09:00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;SchemaAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sub&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;given_name&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;family_name&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;middle_name&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nickname&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;preferred_username&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;profile&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;picture&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;website&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="hll"><span class="w">      </span><span class="p">{</span>
+</span><span class="hll"><span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;email&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">        </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">        </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span class="hll"><span class="w">        </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span class="hll"><span class="w">        </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span class="hll"><span class="w">        </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">          </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">          </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+</span><span class="hll"><span class="w">        </span><span class="p">}</span>
+</span><span class="hll"><span class="w">      </span><span class="p">},</span>
+</span><span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;email_verified&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Boolean&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gender&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;birthdate&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;zoneinfo&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;locale&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;phone_number&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;phone_number_verified&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Boolean&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;address&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;updated_at&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Number&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;NumberAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;MinValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;AutoVerifiedAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;email&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="hll"><span class="w">    </span><span class="nt">&quot;UsernameAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span class="hll"><span class="w">      </span><span class="s2">&quot;email&quot;</span>
+</span><span class="hll"><span class="w">    </span><span class="p">],</span>
+</span><span class="w">    </span><span class="nt">&quot;VerificationMessageTemplate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;DefaultEmailOption&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CONFIRM_WITH_CODE&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;UserAttributeUpdateSettings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;AttributesRequireVerificationBeforeUpdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;email&quot;</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;MfaConfiguration&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OFF&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;EstimatedNumberOfUsers&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;EmailConfiguration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;EmailSendingAccount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;COGNITO_DEFAULT&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;UserPoolTags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;AdminCreateUserConfig&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;AllowAdminCreateUserOnly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;UnusedAccountValidityDays&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;UsernameConfiguration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;CaseSensitive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;Arn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arn:aws:cognito-idp:ap-northeast-1:XXXXXXXXXXXX:userpool/ap-northeast-1_XXXXXXXXX&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;AccountRecoverySetting&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;RecoveryMechanisms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;Priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;verified_email&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>この User Pool の設定から、UsernameAttributes が設定されていることがわかります。
+UsernameAttributes は、ユーザ名として使う属性を指定するものです。
+この場合、email が指定されているので、email がユーザ名として使われていることがわかります。</p>
+<div class="highlight"><span class="filename">結果（UsernameAttributes 部分抜粋）</span><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;UsernameAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;email&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>また、email は必須設定になっていることもわかります。</p>
+<div class="highlight"><span class="filename">結果（SchemaAttributes 部分抜粋）</span><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;SchemaAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;email&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>以下のコマンドを入力すると、ユーザ情報の一覧が見れます。
+emailが登録した<code>hoge@example.com</code>になっていることがわかります。
+<code>username</code>が UUID になっていることがわかります。
+また、<code>sub</code> が <code>username</code> と同じ値になっています。</p>
+<div class="highlight"><span class="filename">ユーザ一覧確認コマンド</span><pre><span></span><code><span class="n">aws</span> <span class="n">cognito-idp</span> <span class="n">list-users</span> <span class="p">-</span><span class="n">-user-pool-id</span> <span class="n">ap-northeast</span><span class="p">-</span><span class="n">1_XXXXXXXXX</span>
+</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">結果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Users&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="hll"><span class="w">            </span><span class="nt">&quot;Username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ebaaaf61-a9ca-4da4-95ad-4820f1742c55&quot;</span><span class="p">,</span>
+</span><span class="w">            </span><span class="nt">&quot;Attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="hll"><span class="w">                </span><span class="p">{</span>
+</span><span class="hll"><span class="w">                    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sub&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">                    </span><span class="nt">&quot;Value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ebaaaf61-a9ca-4da4-95ad-4820f1742c55&quot;</span>
+</span><span class="hll"><span class="w">                </span><span class="p">},</span>
+</span><span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;email_verified&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;Value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;true&quot;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="hll"><span class="w">                </span><span class="p">{</span>
+</span><span class="hll"><span class="w">                    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;email&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">                    </span><span class="nt">&quot;Value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hoge@example.com&quot;</span>
+</span><span class="hll"><span class="w">                </span><span class="p">}</span>
+</span><span class="w">            </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;UserCreateDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-03-25T21:38:30.603000+09:00&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;UserLastModifiedDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-03-25T21:45:49.239000+09:00&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;Enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;UserStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CONFIRMED&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="username-attributes_1">Username Attributes のときのサインアップ重複エラー</h4>
+<p><a href="#sign-up-with-existing-email">前述</a>の通り、Username Attributes が設定されている場合、同じ email でサインアップを行うと UsernameExistsException が発生します。</p>
+<h4 id="username-attributes_2">Username Attributes へのサインイン</h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>AWS CLI でサインインする場合、サインインコマンドは InitiateAuth と AdminInitiateAuth の二つがあります。
+クライアントの Authentication flows を初期設定にしている場合、<code>ALLOW_USER_SRP_AUTH</code>でサインインすることになります。
+しかし、このフローを利用する場合、 SRP_A を準備する必要があり、Powershell で動作を確認する際は作業が面倒です。
+そのため、今回は AdminInitiateAuth を使ってサインインします。
+Authentication flows に<code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>を追加しておくと、SRP_A なしでユーザのパスワードを使ってサインインできるようになり、Powershell での確認が楽になります。</p>
+<p><img alt="Authentication flows" src="../images/amazon-cognito/authentication-flows.png" /></p>
+<p>ちなみに、Vue でアクセスする場合は、<code>amazon-cognito-identity-js</code>を使ってサインインすることになりますが、その際は SRP_A がライブラリ側で準備されるので、面倒はありません。
+AdminInitiateAuth を使うのは、あくまで Powershell で確認するための暫定的な処置です。</p>
+</div>
+<p>Amazon Cognito に登録されたユーザへのサインインを行います。</p>
+<div class="highlight"><pre><span></span><code><span class="n">aws</span> <span class="n">cognito-idp</span> <span class="n">admin-initiate-auth</span> <span class="p">-</span><span class="n">-auth-flow</span> <span class="n">ADMIN_USER_PASSWORD_AUTH</span> <span class="p">-</span><span class="n">-client-id</span> <span class="n">1234567890abcdef0</span> <span class="p">-</span><span class="n">-auth-parameters</span> <span class="n">USERNAME</span><span class="p">=</span><span class="s2">&quot;hoge@example.com&quot;</span><span class="p">,</span><span class="n">PASSWORD</span><span class="p">=</span><span class="s2">&quot;Password1!&quot;</span> <span class="p">-</span><span class="n">-user-pool-id</span> <span class="n">ap-northeast</span><span class="p">-</span><span class="n">1_XXXXXXXXX</span>
+</code></pre></div>
+<p>サインインに成功すると、3つのトークンが返されます。</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;ChallengeParameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;AuthenticationResult&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;AccessToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;XXXXXXXX&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExpiresIn&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;TokenType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bearer&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;RefreshToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;YYYYYYYY&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;IdToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ZZZZZZZZ&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="username-attributes_3">Username Attributes でのユーザ情報</h4>
+<p>先ほど取得した AccessToken を使って、ユーザ情報を取得します。</p>
+<div class="highlight"><pre><span></span><code><span class="n">aws</span> <span class="n">cognito-idp</span> <span class="nb">get-user</span> <span class="p">-</span><span class="n">-access-token</span> <span class="n">XXXXXXXX</span>
+</code></pre></div>
+<p>email を Username Attributes に設定している場合、ユーザ情報の一覧を取得すると、<code>username</code> が <code>sub</code> と一致するUUID になっていることがわかります。</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ebaaaf61-a9ca-4da4-95ad-4820f1742c55&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;UserAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sub&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;Value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ebaaaf61-a9ca-4da4-95ad-4820f1742c55&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;email_verified&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;Value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;true&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;email&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;Value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hoge@example.com&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Username Attributes として、username のみを設定した場合は、以下のように username がユーザ名として設定されます。</p>
+<h3 id="alias-attributes">Alias Attributes</h3>
+<h4 id="alias-attributes_1">Alias Attributes の設定</h4>
+<p>新たに Cognito のユーザプールを作成し、Alias Attributes を設定します。
+以下のようにチェックボックスにチェックを入れます。 username と email の二つを選択します。
+Alias Attributes の設定を行う際は、<strong>email 単独での設定はできません</strong>。
+<strong>username 単独での設定もできません</strong>。
+<strong>その二つを組み合わせるようにしてください</strong>。
+あくまでユーザ名によるサインインが主で、email は追加のサインインエイリアスとして使うという考え方なのかもしれません。</p>
+<p><img alt="Sign-In Experience for Alias Attributes" src="../images/amazon-cognito/configure-sign-in-experience-for-alias-attributes.png" /></p>
+<p>Alias Attributes が設定されていることを、AWS CLI で確認します。
+ユーザプール一覧を確認し、詳細を知りたい User Pool の ID を取得します。</p>
+<div class="highlight"><span class="filename">ユーザプール一覧確認コマンド</span><pre><span></span><code><span class="n">aws</span> <span class="n">cognito-idp</span> <span class="n">list-user-pools</span> <span class="p">-</span><span class="n">-max-results</span> <span class="n">20</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">結果</span><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UserPools&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="hll"><span class="w">            </span><span class="nt">&quot;Id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ap-northeast-1_XXXXXXXXX&quot;</span><span class="p">,</span>
+</span><span class="w">            </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FugaUserPool&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;LambdaConfig&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">            </span><span class="nt">&quot;LastModifiedDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-03-25T21:22:34.748000+09:00&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;CreationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-03-25T21:22:34.748000+09:00&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>ID を使って詳細を取得します。</p>
+<div class="highlight"><span class="filename">ユーザプール詳細確認コマンド</span><pre><span></span><code><span class="n">aws</span> <span class="n">cognito-idp</span> <span class="n">describe-user-pool</span> <span class="p">-</span><span class="n">-user-pool-id</span> <span class="n">ap-northeast</span><span class="p">-</span><span class="n">1_XXXXXXXXX</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">結果（全文）</span><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UserPool&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ap-northeast-1_XXXXXXXXX&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FugaUserPool&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Policies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;PasswordPolicy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;MinimumLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;RequireUppercase&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;RequireLowercase&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;RequireNumbers&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;RequireSymbols&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;TemporaryPasswordValidityDays&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;DeletionProtection&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;LambdaConfig&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">        </span><span class="nt">&quot;LastModifiedDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-03-30T22:15:53.847000+09:00&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;CreationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-03-30T22:15:53.847000+09:00&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;SchemaAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sub&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;given_name&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;family_name&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;middle_name&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nickname&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;preferred_username&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;profile&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;picture&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;website&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="hll"><span class="w">            </span><span class="p">{</span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;email&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">                    </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">                    </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+</span><span class="hll"><span class="w">                </span><span class="p">}</span>
+</span><span class="hll"><span class="w">            </span><span class="p">},</span>
+</span><span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;email_verified&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Boolean&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gender&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;birthdate&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;zoneinfo&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;locale&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;phone_number&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;phone_number_verified&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Boolean&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;address&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;updated_at&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Number&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;NumberAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;MinValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;AutoVerifiedAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;email&quot;</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="hll"><span class="w">        </span><span class="nt">&quot;AliasAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span class="hll"><span class="w">            </span><span class="s2">&quot;email&quot;</span>
+</span><span class="hll"><span class="w">        </span><span class="p">],</span>
+</span><span class="w">        </span><span class="nt">&quot;VerificationMessageTemplate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;DefaultEmailOption&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CONFIRM_WITH_CODE&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;UserAttributeUpdateSettings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;AttributesRequireVerificationBeforeUpdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;email&quot;</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;MfaConfiguration&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OFF&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;EstimatedNumberOfUsers&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;EmailConfiguration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;EmailSendingAccount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;COGNITO_DEFAULT&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;UserPoolTags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">        </span><span class="nt">&quot;AdminCreateUserConfig&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;AllowAdminCreateUserOnly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;UnusedAccountValidityDays&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;UsernameConfiguration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;CaseSensitive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;Arn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arn:aws:cognito-idp:ap-northeast-1:XXXXXXXXXXXX:userpool/ap-northeast-1_XXXXXXXXX&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;AccountRecoverySetting&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;RecoveryMechanisms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;Priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;verified_email&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Alias Attributes が設定されています。
+この場合、email が指定されているので、username の他に email がサインイン属性として使われていることがわかります。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Alias Attributes を設定した場合</label><label for="__tabbed_1_2">Username Attributes を設定した場合（前述）</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">結果（AliasAttributes 部分抜粋）</span><pre><span></span><code><span class="p">{</span>
+<span class="hll"><span class="w">  </span><span class="nt">&quot;AliasAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span class="w">    </span><span class="s2">&quot;email&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><a href="#username-attributes-setting">Username Attributes を設定した場合</a>は、key が <code>UsernameAttributes</code> になります。</p>
+<div class="highlight"><span class="filename">結果（UsernameAttributes 部分抜粋）</span><pre><span></span><code><span class="p">{</span>
+<span class="hll"><span class="w">  </span><span class="nt">&quot;UsernameAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span class="w">    </span><span class="s2">&quot;email&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>また、email は Username Attributes と同様に必須設定になっていることもわかります。</p>
+<div class="highlight"><span class="filename">結果（SchemaAttributes 部分抜粋）</span><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;SchemaAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;email&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;AttributeDataType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;DeveloperOnlyAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Mutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;StringAttributeConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;MinLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;MaxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2048&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="alias-attributes_2">Alias Attributes のときのサインアップ重複エラー</h4>
+<p>登録されているメールアドレスでサインアップを行った場合の挙動を確かめてみましょう。</p>
+<p>まず、最初のユーザを登録するため、サインアップします。
+hoge さんを<code>email=hoge@example.com</code>で登録します。</p>
+<div class="highlight"><pre><span></span><code><span class="n">aws</span> <span class="n">cognito-idp</span> <span class="n">sign-up</span> <span class="p">-</span><span class="n">-client-id</span> <span class="n">1234567890abcdef0</span> <span class="p">-</span><span class="n">-password</span> <span class="n">Password1</span><span class="p">!</span> <span class="p">-</span><span class="n">-user-attributes</span> <span class="n">Name</span><span class="p">=</span><span class="s2">&quot;email&quot;</span><span class="p">,</span><span class="n">Value</span><span class="p">=</span><span class="s2">&quot;hoge@example.com&quot;</span> <span class="p">-</span><span class="n">-username</span> <span class="n">hoge</span>
+</code></pre></div>
+<p>その後、<code>hoge@example.com</code>に届いた確認コードを使って、ユーザを確認します。</p>
+<div class="highlight"><pre><span></span><code><span class="n">aws</span> <span class="n">cognito-idp</span> <span class="nb">confirm-sign</span><span class="n">-up</span> <span class="p">-</span><span class="n">-client-id</span> <span class="n">1234567890abcdef0</span> <span class="p">-</span><span class="n">-confirmation-code</span> <span class="n">123456</span> <span class="p">-</span><span class="n">-username</span> <span class="n">hoge</span>
+</code></pre></div>
+<p>無事サインアップが完了しました。</p>
+<p>余談ですが、email を利用した Username Attributes の場合、確認コードを送信する際には<code>--username</code>に email を使っていました。
+Alias Attributes の場合、<code>--username</code>に email を使うと、確認コードが正しくても<code>ExpiredCodeException</code>が発生しました。
+<code>--username</code>に割り当てる値の仕様が違うことに注意してください。</p>
+<p>続いて、fuga さんを同じメールアドレスでサインアップします。</p>
+<div class="highlight"><pre><span></span><code><span class="n">aws</span> <span class="n">cognito-idp</span> <span class="n">sign-up</span> <span class="p">-</span><span class="n">-client-id</span> <span class="n">1234567890abcdef0</span> <span class="p">-</span><span class="n">-password</span> <span class="n">Password1</span><span class="p">!</span> <span class="p">-</span><span class="n">-user-attributes</span> <span class="n">Name</span><span class="p">=</span><span class="s2">&quot;email&quot;</span><span class="p">,</span><span class="n">Value</span><span class="p">=</span><span class="s2">&quot;hoge@example.com&quot;</span> <span class="p">-</span><span class="n">-username</span> <span class="n">fuga</span>
+</code></pre></div>
+<p>すると、サインアップが成功したときと同じレスポンスが返却されました。
+このメールアドレスが登録されているかどうかは、サインアップ時には分からなくなっています。
+また、メールアドレス宛に確認コードが送信されることもありません。</p>
+<h4 id="alias-attributes_3">Alias Attributes へのサインイン</h4>
+<p>Alias Attributes でサインインする場合、username または email のどちらかを使ってサインインすることができます。</p>
+<h4 id="alias-attributes_4">Alias Attributes でのユーザ情報</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
+      
+    
+  </body>
+</html>
